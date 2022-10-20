@@ -1,0 +1,428 @@
+$lightblue: #F6FDFF;
+$lightgreen: #F9FFF9;
+$lightorange: #FFFEF4;
+
+.our_projects {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .projects__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    width: 94%;
+    height: 736px;
+    margin: 10rem 0 0 0;
+    padding: 0 0 0 5%;
+    overflow: hidden;
+
+    .projects__content {
+      // width: 45%;
+
+      .projects__text {
+        
+        .projects__title{
+          font-size: 3rem;
+          margin-bottom: 1.8rem;
+          font-weight: bold;
+        }
+        
+        .projects__text_p {
+          font-size: 1.7rem;
+          font-weight: 400;
+        }
+      }
+
+      .projects__button{
+        margin-top: 3rem;
+
+        .projects__knopka {
+          width: 331px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          color: #000000;
+          cursor: pointer;
+          height: 52px;
+          font-size: 1.5rem;
+        }
+
+        .testUkrLang__button{
+          border: 1px solid rgba(122,214,255,1);
+          background-color: #F6FDFF;
+        }
+
+        .testUkrLang__button:active{
+          background-color: #F3FBFF;
+        }
+
+        .wheelFortune__button{
+          border: 1px solid rgba(157,255,122,1);
+          background-color: #F9FFF9;
+        }
+
+        .chainHappiness__button{
+          border: 1px solid rgba(255,210,122,1);
+          background-color: #FFFEF4;
+        }
+      }
+    }
+
+    .testUa_img{
+      background-image: url(../../../../../assets/images/testUkrLang/testFull.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .projects__img_block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      // width: 55%;
+      padding: 2%;
+      overflow: hidden;
+
+      .img__block{
+        height: 100%;
+        width: 33.3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+
+        img{
+          position: absolute;
+        }
+
+        p{
+          position: absolute;
+          font-size: 2.5rem;
+        }
+
+        .testUkrLang_p_b0{
+          bottom: 58.5%;
+          right: 39%;
+          rotate: -8deg;
+        }
+
+        .testUkrLang_p_b{
+          top: 47.8%;
+          right: 10%;
+          rotate: 5deg;
+        }
+
+        .testUkrLang_img_v{
+          z-index: 1;
+        }
+  
+        .testUkrLang_img_b{
+          top: 47.5%;
+          right: 7%;
+        }
+  
+        .testUkrLang_img_b0{
+          bottom: 58%;
+          right: 37%;
+        }
+  
+        .testUkrLang_img_b1{
+          top: 38%;
+          width: 16%;
+        }
+  
+        .testUkrLang_img_g{
+          z-index: 10;
+        }
+  
+        .testUkrLang_img_k{
+          bottom: 48%;
+          right: 33%;
+        }
+      }
+    }
+  }
+
+  .testUkrLang{
+    -webkit-box-shadow: 4px 5px 6px rgba(122,214,255,1);
+    -moz-box-shadow: 4px 5px 6px rgba(122,214,255,1);
+    box-shadow: 4px 5px 6px rgba(122,214,255,1);
+    border: 1px solid rgba(122,214,255,1);
+    background-color: #F6FDFF;
+  }
+  
+  
+  .wheelFortune{
+    -webkit-box-shadow: 4px 5px 6px rgba(157,255,122,1);
+    -moz-box-shadow: 4px 5px 6px rgba(157,255,122,1);
+    box-shadow: 4px 5px 6px rgba(157,255,122,1);
+    border: 1px solid rgba(157,255,122,1);
+    background-color: #F9FFF9;
+  }
+  
+  .chainHappiness{
+    -webkit-box-shadow: 4px 5px 6px rgba(255,210,122,1);
+    -moz-box-shadow: 4px 5px 6px rgba(255,210,122,1);
+    box-shadow: 4px 5px 6px rgba(255,210,122,1);
+    border: 1px solid rgba(255,210,122,1);
+    background-color: #FFFEF4;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .our_projects {
+    margin-top: 0;
+
+    .projects__block{
+      height: 663px;
+      margin: 7rem 0 0 0;
+
+      .projects__content{
+
+        .projects__text{
+          line-height: 3rem;
+
+          .projects__title{
+            font-size: 2.2rem;
+          }
+
+          .projects__text_p{
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .projects__img_block{
+
+        .img__block:first-child{
+          justify-content: flex-end;
+        }
+
+        .img__block{
+          width: 50%;
+          align-items: center;
+          
+          img{
+            position: relative;
+          }
+
+          .testUkrLang_img_b0{
+            display: none;
+          }
+
+          .testUkrLang_p_b0{
+            display: none;
+          }
+
+          .testUkrLang_img_k{
+            bottom: 0;
+            right: 0;
+            width: 30%;
+          }
+
+          .testUkrLang_img_v{
+            display: none;
+          }
+        }
+
+        .img__block:last-child{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .projects__text_card li {
+    font-size: 1.2rem;
+  }
+
+  .projects_text h2 {
+    font-size: 3.8rem;
+  }
+
+  .projects_text p {
+    font-size: 1.2rem;
+  }
+
+  .projects_content {
+    height: 653px;
+  }
+
+  .takeStud_content {
+    margin-top: 10%;
+
+    p {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .testUkrLang{
+
+    .img__block:first-child{
+      width: 30% !important;
+    }
+    .img__block{
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .our_projects{
+
+    .projects__block{
+      height: 585px;
+      margin: 5rem 0 0 0;
+
+      .testUa_img{
+        background-image: url(../../../../../assets/images/testUkrLang/testMedium.svg);
+      }
+
+      .projects__content{
+
+        .projects__button{
+          
+          .projects__knopka{
+            width: 274px;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .testUkrLang{
+
+    .img__block:first-child{
+      display: none !important;
+    }
+    .img__block{
+      width: 80% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .our_projects {
+    
+    .projects__block{
+      height: 479px;
+
+      .projects__content{
+
+        .projects__text{
+
+          .projects__title{
+            font-size: 1.6rem;
+            margin-bottom: 0.2rem;
+          }
+
+          .projects__text_p{
+            font-size: 1.1rem;
+          }
+        }
+
+        .projects__button{
+
+          .projects__knopka{
+            width: 225px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  
+}
+
+@media screen and (max-width: 500px){
+  .our_projects {
+    margin-top: 3rem;
+
+    .projects__block{
+      border-radius: 0;
+      width: 100%;
+      height: 641px;
+      padding-left: 0;
+      flex-direction: column;
+
+      .testUa_img{
+        background-image: url(../../../../../assets/images/testUkrLang/testSmall.svg);
+        background-size: 50%;
+      }
+
+      .projects__content{
+
+        .projects__text{
+          text-align: center;
+        }
+
+        .projects__button{
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .testUkrLang{
+      flex-direction: column-reverse;
+      justify-content: space-evenly;
+
+      .projects__img_block{
+        height: 250px;
+      }
+
+      .img__block{
+        width: 55% !important;
+      }
+    }
+
+    .wheelFortune{
+      justify-content: space-evenly;
+
+      .projects__img_block{
+        height: 63% !important;
+      } 
+    }
+
+    .chainHappiness{
+      justify-content: center;
+
+      .projects__img_block{
+        height: 60% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .our_projects{
+    margin-top: 0;
+  }
+ 
+}
+
+@media screen and (max-width: 320px) {
+  .our_projects{
+
+    .projects__block{
+
+      .projects__content{
+
+        .projects__text{
+
+          .projects__text_p{
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
