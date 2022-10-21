@@ -5,6 +5,7 @@ import React from 'react'
 import Logotype from '../../../assets/images/header/logo.svg'
 import Dnipro from '../../../assets/images/header/dnipro.svg'
 import Dpgumpol from '../../../assets/images/header/dpgumpol.svg'
+import osvitnyaT from '../../../assets/images/header/osvitnyaT.svg'
 import Ednipro from '../../../assets/images/header/ednipro.svg'
 
 import './styles.module.scss'
@@ -29,9 +30,15 @@ const Header = () => {
             </a>
           </div>
 
-          <div className='header__logo_block col-xl-4 col-lg-3 col-md-4 col-4'>
+          <div className='header__logo_block col-xl-3 col-lg-3 col-md-4 col-4'>
             <a href="https://humpolitic.dniprorada.gov.ua/" className="navbar-brand row">
               <img className='header__logo' src={Dpgumpol} alt="logo Gundep" />
+            </a>
+          </div>
+
+          <div className='header__logo_block col-xl-2 col-lg-3 col-md-4 col-4'>
+            <a href="https://otd.dniprorada.gov.ua/" className="navbar-brand row">
+              <img className='header__logo' src={osvitnyaT} alt="logo osvitnyaT" />
             </a>
           </div>
 

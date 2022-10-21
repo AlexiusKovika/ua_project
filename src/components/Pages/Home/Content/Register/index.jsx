@@ -161,7 +161,7 @@ const Register = () => {
                                     value='male'
                                     checked={checked}
                                     onChange={e => setGender(e.target.value)}
-                                    {...register("gender", { required: 'Выберите пол' })}
+                                    {...register("gender", { required: 'Оберіть стать' })}
                                 />
                                 <span>Чоловіча</span>
                             </label>
@@ -178,7 +178,7 @@ const Register = () => {
                                     value='female'
                                     checked={checked}
                                     onChange={e => setGender(e.target.value)}
-                                    {...register("gender", { required: 'Выберите пол' })}
+                                    {...register("gender", { required: 'Оберіть стать' })}
                                 />
                                 <span>Жіноча</span>
                             </label>
