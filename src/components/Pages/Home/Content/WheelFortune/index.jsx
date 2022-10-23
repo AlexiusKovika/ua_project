@@ -1,9 +1,9 @@
-import React, { useState, useCallback, useContext } from "react";
+import React, { useState, useCallback } from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import Roulette from "./Roulette";
 import { generateNumber } from "../../../../services/helpers";
-import {ModalContext} from "../../../../Base/ModalContainer";
+import {useModal} from "../../../../Base/ModalContainer";
 
 // import idiSound from "../../../../sounds/idi.mp3";
 // import startSound from "../../../../sounds/start.mp3";
@@ -25,7 +25,8 @@ const Fortune = () => {
   const [currentRotate, setCurrentRotate] = useState(0);
   const [isAnimate, setIsAnimate] = useState(true);
   const [isRoll, setIsRoll] = useState(false);
-  const { hideModal, showModal } = useContext(ModalContext)
+
+  const { closeModal, openModal } = useModal();
 
   const onRoll = useCallback(() => {
     setIsRoll(true);
@@ -75,8 +76,8 @@ const Fortune = () => {
       setTimeout(() => {
         setIsRoll(false);
         setIsAnimate(true);
-        hideModal()
-        showModal()
+        closeModal()
+        openModal('wheelfortune')
         
         // new Audio(endSound).play();
       }, 1000);
