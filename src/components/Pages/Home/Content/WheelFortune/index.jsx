@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import Roulette from "./Roulette";
-import { generateNumber } from "../../../../services/helpers";
+import { generateNumber, useLocalStorage } from "../../../../services/helpers";
 import {useModal} from "../../../../Base/ModalContainer";
 
 // import idiSound from "../../../../sounds/idi.mp3";
@@ -10,7 +10,6 @@ import {useModal} from "../../../../Base/ModalContainer";
 // import endSound from "../../../../sounds/end.mp3";
 
 const Fortune = () => {
-    
   const presents = [
     "Література",
     "Історики",
@@ -26,48 +25,30 @@ const Fortune = () => {
   const [isAnimate, setIsAnimate] = useState(true);
   const [isRoll, setIsRoll] = useState(false);
 
-  const { closeModal, openModal } = useModal();
+  const { getItem, setItem } = useLocalStorage();
+  const { openModal } = useModal();
+
+  const generateUnique = () => {
+    const historyRolls = JSON.parse(getItem('historyRolls')) || [];
+    const number = generateNumber(0, 5);
+
+    if (historyRolls.includes(number)) {
+      return (historyRolls.length === 5) ? false : generateUnique();
+    } else {
+      setItem('historyRolls', JSON.stringify([...historyRolls, number]));
+      return number;
+    }
+  }
 
   const onRoll = useCallback(() => {
-    setIsRoll(true);
-    const randomNumber = generateNumber(0, 7);
-    const randomWord = presents[randomNumber];
-    // const uniqRandomWord = Array.from(new Set(randomWord));
-    // const uniq = [];
-    // const uniqRandomWord = randomNumber.push(uniq);
+    let randomNumber = generateUnique();
 
-    // function makeGetRandomElement(initialArray) {
-    //   var arr
-    //   function randomIndex() {
-    //    return Math.floor(Math.random() * arr.length)
-    //   }
-    //   function reinitArray() {
-    //    arr = initialArray.slice()
-    //   }
-    //   reinitArray()
-    //   return function getRandomElement() {
-    //    if (arr.length === 0) reinitArray()
-    //    return arr.splice(randomIndex(), 1)[0]
-    //   }
-    //  }
-     
-    //  let test = []
-     
-    //  // использование
-    //  var getRandomElement = makeGetRandomElement([1, 2, 3, 4, 5, 6, 7])
-    //  for (let i = 0; i < [1, 2, 3, 4, 5, 6, 7].length; i++) {
-    //   test.push(getRandomElement())
-    //  }
-     
-    //  console.log(test)
+    setIsRoll(true);
 
     const randomRoll =
       360 * 50 + (360 / 8) * randomNumber + generateNumber(0, 360 / 8);
 
     setCurrentRotate(randomRoll);
-
-    // new Audio(idiSound).play();
-    // new Audio(startSound).play();
 
     setTimeout(() => {
       setIsAnimate(false);
@@ -76,13 +57,8 @@ const Fortune = () => {
       setTimeout(() => {
         setIsRoll(false);
         setIsAnimate(true);
-        closeModal()
         openModal('wheelfortune')
-        
-        // new Audio(endSound).play();
       }, 1000);
-      
-      console.log(`${randomWord}`, `${randomNumber}`)
     }, 5000);
 
   }, [currentRotate]);

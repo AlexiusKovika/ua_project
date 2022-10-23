@@ -18,9 +18,9 @@ import './App.scss'
 const App = () => {
 
   return (
-    <>
+    <BrowserRouter>
     <ModalContainer>
-      <BrowserRouter>
+      
       
         <Header />
 
@@ -39,14 +39,14 @@ const App = () => {
             
           <Footer />
           
-      </BrowserRouter>
+      
     </ModalContainer>
         {/* <ModalContainer>
           <Header />
           <HomePage />
           <Footer />
         </ModalContainer> */}
-    </>
+    </BrowserRouter>
   )
 }
 

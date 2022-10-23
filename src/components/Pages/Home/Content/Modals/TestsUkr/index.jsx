@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-// import { flushSync } from 'react-dom';
+import { useCallback } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useModal } from '../../../../../Base/ModalContainer';
 
-const Tests = () => {
-
-    const questions = [
+const questions = [
         {
             questionText: 'Склад, який вимовляється з більшою силою голосу, називають..?', 
             answerOptions: [
@@ -278,6 +278,11 @@ const Tests = () => {
         },
     ]
 
+const Tests = () => {
+
+    const navigate = useNavigate();
+    const { closeModal } = useModal();
+
     /* It's working a piece code */
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore] = useState(0)
@@ -295,6 +300,8 @@ const Tests = () => {
             setCurrentQuestion(nextQustion)
         } else {
             setShowScore(true)
+            closeModal();
+            navigate('/result')
         }
         // currentQuestion++
         // setTimeout(nextQustion, 10000);      
@@ -306,7 +313,7 @@ const Tests = () => {
                 {
                     showScore
                         ? <div className="tests__score col-lg-12 col-md-12 col-12">
-                                <h2>Вірних відповідей {score} з {questions.length}</h2> 
+                            <h2>Вірних відповідей {score} з {questions.length}</h2> 
                           </div>
                         
                         :  <div className="tests__content col-lg-12 col-md-12 col-12">
